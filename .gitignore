@@ -1,0 +1,17 @@
+# Секреты
+kaggle.json
+.env
+.env.*
+
+# Сырые данные (исходный CSV > 10 МБ в репозиторий не кладётся)
+*.csv
+raw/
+
+# Системные и редакторские файлы
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+__pycache__/
+.ipynb_checkpoints/
