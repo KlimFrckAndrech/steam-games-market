@@ -1,0 +1,2 @@
+.game-card__cover-link { display: block; background: var(--color-border); }
+.game-card__cover { display: block; width: 100%; height: auto; aspect-ratio: 460 / 215; object-fit: cover; }
