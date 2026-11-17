@@ -1,0 +1,27 @@
+.header__burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: transparent;
+  cursor: pointer;
+}
+.header__burger-line,
+.header__burger-line::before,
+.header__burger-line::after {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: var(--color-text);
+  content: "";
+  position: relative;
+}
+.header__burger-line::before { position: absolute; top: -6px; }
+.header__burger-line::after { position: absolute; top: 6px; }
+
+@media (min-width: 1024px) {
+  .header__burger { display: none; }
+}

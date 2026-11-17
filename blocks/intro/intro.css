@@ -1,0 +1,4 @@
+/* Первый экран страницы: заголовок h1 и лид */
+.intro { padding-block: var(--space-8) var(--space-6); }
+.intro__title { max-width: 22ch; }
+.intro__lead { max-width: 60ch; color: var(--color-muted); font-size: 1.125rem; }

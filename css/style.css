@@ -1,5 +1,22 @@
-/* Единая точка входа стилей. Порядок: переменные → база → блоки → утилиты.
-   Все пути относительные (важно для GitHub Pages). */
+/* Единая точка входа стилей. Порядок: переменные → шрифты → база → блоки.
+   Все пути относительные (важно для GitHub Pages). Блок подключается одной строкой. */
+@import url("variables.css");
+@import url("fonts.css");
+@import url("base.css");
 
-/* Блоки подключаются здесь по мере появления, например:
-   @import url("../blocks/header/header.css"); */
+@import url("../blocks/skip-link/skip-link.css");
+@import url("../blocks/container/container.css");
+@import url("../blocks/button/button.css");
+@import url("../blocks/button/modifiers/button--outline.css");
+@import url("../blocks/header/header.css");
+@import url("../blocks/header/elements/header__logo.css");
+@import url("../blocks/header/elements/header__burger.css");
+@import url("../blocks/header/elements/header__nav.css");
+@import url("../blocks/header/modifiers/header__nav--open.css");
+@import url("../blocks/theme-toggle/theme-toggle.css");
+@import url("../blocks/footer/footer.css");
+@import url("../blocks/footer/elements/footer__title.css");
+@import url("../blocks/footer/elements/footer__text.css");
+@import url("../blocks/footer/elements/footer__list.css");
+@import url("../blocks/footer/elements/footer__link.css");
+@import url("../blocks/intro/intro.css");
