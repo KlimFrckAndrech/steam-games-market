@@ -1,0 +1,11 @@
+.pagination__button {
+  min-width: 2.75rem; min-height: 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+.pagination__button:hover:not(:disabled) { border-color: var(--color-link); }
+.pagination__button:disabled { opacity: 0.45; cursor: not-allowed; }
+.pagination__button[aria-current="page"] { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); font-weight: 700; }

@@ -1,0 +1,7 @@
+.game-card {
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}

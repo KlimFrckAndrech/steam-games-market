@@ -1,0 +1,2 @@
+.text { max-width: 65ch; }
+.text__title { margin-top: var(--space-8); }

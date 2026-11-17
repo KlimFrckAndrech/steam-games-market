@@ -1,0 +1,4 @@
+.game-card__score { display: grid; gap: var(--space-1); }
+.game-card__score-text { margin: 0; font-size: 0.875rem; color: var(--color-muted); }
+.game-card__bar { height: 0.5rem; border-radius: 999px; background: var(--color-border); overflow: hidden; }
+.game-card__bar-fill { height: 100%; background: var(--color-accent); }
