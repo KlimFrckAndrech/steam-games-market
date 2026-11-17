@@ -1,0 +1,2 @@
+.filters__toggle { width: 100%; margin-bottom: var(--space-3); }
+@media (min-width: 1024px) { .filters__toggle { display: none; } }

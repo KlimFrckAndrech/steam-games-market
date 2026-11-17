@@ -1,0 +1,8 @@
+.filters__panel {
+  display: none;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+@media (min-width: 1024px) { .filters__panel { display: block; } }

@@ -38,12 +38,96 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" data-catalog>
     <section class="intro">
       <div class="container">
         <h1 class="intro__title">Каталог игр</h1>
-        <p class="intro__lead">Поиск по названию, фильтры по цене, платформе, жанру, году и русскому языку, сортировка и пагинация.</p>
-        <p>Страница в разработке: этот каркас задаёт шапку, подвал и темы, содержимое появится в следующих этапах.</p>
+        <p class="intro__lead">Выборка игр Steam из набора данных за март 2025 года: ищите по названию, отбирайте по цене, платформе, жанру, году и русскому языку, сортируйте по отзывам и дате.</p>
+        <form class="catalog__search field" role="search" aria-label="Поиск по названию">
+          <label class="field__label" for="search">Поиск по названию</label>
+          <input class="field__control" id="search" type="search" name="q" placeholder="Например, Portal" autocomplete="off">
+        </form>
+      </div>
+    </section>
+
+    <section class="catalog container" aria-labelledby="catalog-title">
+      <h2 class="visually-hidden" id="catalog-title">Фильтры и список игр</h2>
+
+      <aside class="filters" aria-label="Фильтры">
+        <button class="button button--outline filters__toggle" type="button" data-filters-toggle aria-expanded="false" aria-controls="filters-panel">Фильтры</button>
+        <form class="filters__panel" id="filters-panel" data-filters>
+          <div class="field">
+            <label class="field__label" for="f-bin">Цена</label>
+            <select class="field__control" id="f-bin" data-bin>
+              <option value="">Любая</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="f-genre">Жанр</label>
+            <select class="field__control" id="f-genre" data-genre>
+              <option value="">Любой</option>
+            </select>
+          </div>
+          <fieldset class="field">
+            <legend class="field__label">Платформа</legend>
+            <label class="field__check"><input type="checkbox" value="Windows" data-platform> Windows</label>
+            <label class="field__check"><input type="checkbox" value="macOS" data-platform> macOS</label>
+            <label class="field__check"><input type="checkbox" value="Linux" data-platform> Linux</label>
+          </fieldset>
+          <div class="field">
+            <label class="field__check"><input type="checkbox" data-ru> Есть русский язык</label>
+          </div>
+          <fieldset class="field">
+            <legend class="field__label">Год выхода</legend>
+            <div class="field__row">
+              <label class="visually-hidden" for="f-from">С года</label>
+              <select class="field__control" id="f-from" data-from></select>
+              <label class="visually-hidden" for="f-to">По год</label>
+              <select class="field__control" id="f-to" data-to></select>
+            </div>
+            <p class="field__note" data-year-note aria-live="polite"></p>
+          </fieldset>
+          <button class="button button--outline" type="button" data-reset>Сбросить фильтры</button>
+        </form>
+      </aside>
+
+      <div class="catalog__results">
+        <div class="catalog__toolbar">
+          <p class="catalog__count" data-count aria-live="polite">Загрузка…</p>
+          <div class="catalog__sort">
+            <label class="field__label" for="sort">Сортировка</label>
+            <select class="field__control" id="sort" data-sort></select>
+          </div>
+        </div>
+        <div class="state" data-status hidden></div>
+        <p class="visually-hidden" role="status" data-live></p>
+        <ul class="catalog__grid" data-grid></ul>
+        <nav aria-label="Страницы каталога"><ul class="pagination" data-pager></ul></nav>
+      </div>
+    </section>
+
+    <section class="container">
+      <aside class="tip" aria-labelledby="tip-title">
+        <h2 class="tip__title" id="tip-title">Как читать долю положительных отзывов</h2>
+        <p class="tip__text">Это процент положительных оценок среди всех отзывов игры. Мы пересчитываем его по числу положительных и отрицательных отзывов из набора. В каталог попали игры минимум с 50 отзывами: при меньшем числе одна оценка слишком сильно сдвигает процент. Полоска на карточке показывает долю, а число рядом: сколько отзывов за ней стоит.</p>
+      </aside>
+    </section>
+
+    <section class="container text" aria-labelledby="about-catalog">
+      <h2 id="about-catalog">Что именно в каталоге</h2>
+      <p>В каталоге около полутора тысяч игр, вышедших с 2009 по 2024 год. Это не весь Steam, а выборка из набора данных на март 2025 года. Игры отбирались поровну по годам выхода и ценовым диапазонам, поэтому малоизвестных игр здесь больше, чем на витрине магазина. Игры 18+ и с тегами для взрослых в выборку не входят.</p>
+      <p>Фильтры работают вместе. Выберите жанр Strategy и цену «до 5 $», и останутся только недорогие стратегии. Платформы объединяются условием «и»: если отметить Linux и macOS, останутся игры, вышедшие на обеих. Названия жанров даны так, как они записаны в наборе, то есть по-английски.</p>
+      <p>Цены указаны в долларах США и носят справочный характер: купить игру на сайте нельзя. Если обложка не загрузилась с серверов Steam, вместо неё показывается заглушка.</p>
+    </section>
+
+    <section class="container">
+      <div class="cta">
+        <h2>Что дальше</h2>
+        <p class="cta__text">Посмотрите, как цена связана с долей положительных отзывов, или узнайте, откуда взяты данные и что они не показывают.</p>
+        <div class="cta__actions">
+          <a class="button" href="prices.html">Цена и отзывы</a>
+          <a class="button button--outline" href="about.html">О данных</a>
+        </div>
       </div>
     </section>
   </main>

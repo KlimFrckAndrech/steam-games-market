@@ -1,0 +1,4 @@
+.filters { align-self: start; }
+@media (min-width: 1024px) {
+  .filters { position: sticky; top: calc(var(--header-h) + var(--space-4)); }
+}

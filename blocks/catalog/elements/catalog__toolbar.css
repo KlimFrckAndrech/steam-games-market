@@ -1,0 +1,6 @@
+.catalog__toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--space-3); margin-bottom: var(--space-4);
+}
+.catalog__count { margin: 0; font-weight: 700; scroll-margin-top: calc(var(--header-h) + var(--space-4)); }
+.catalog__sort { display: flex; align-items: center; gap: var(--space-2); }
