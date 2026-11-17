@@ -1,0 +1,11 @@
+/* Шрифты подключаются локально (решение С5). Файлы woff2 с кириллицей положить в fonts/:
+   rubik-500.woff2, rubik-700.woff2, roboto-400.woff2, roboto-700.woff2.
+   Пока файлов нет, работает запасной системный шрифт из переменных. */
+@font-face { font-family: "Rubik"; font-weight: 500; font-style: normal; font-display: swap;
+  src: local("Rubik Medium"), url("../fonts/rubik-500.woff2") format("woff2"); }
+@font-face { font-family: "Rubik"; font-weight: 700; font-style: normal; font-display: swap;
+  src: local("Rubik Bold"), url("../fonts/rubik-700.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-weight: 400; font-style: normal; font-display: swap;
+  src: local("Roboto"), url("../fonts/roboto-400.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-weight: 700; font-style: normal; font-display: swap;
+  src: local("Roboto Bold"), url("../fonts/roboto-700.woff2") format("woff2"); }

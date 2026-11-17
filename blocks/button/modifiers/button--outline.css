@@ -1,0 +1,6 @@
+.button--outline {
+  background: transparent;
+  border-color: var(--color-link);
+  color: var(--color-link);
+}
+.button--outline:hover { background: var(--color-surface); }

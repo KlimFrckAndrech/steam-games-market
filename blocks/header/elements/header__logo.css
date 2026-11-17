@@ -1,0 +1,9 @@
+.header__logo {
+  margin-right: auto;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.header__logo span { color: var(--color-link); }

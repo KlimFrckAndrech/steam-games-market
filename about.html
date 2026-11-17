@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О данных — Steam Games Market</title>
+  <meta name="description" content="Откуда взяты данные, как составлена выборка, что она не показывает, и кто сделал сайт.">
+  <script>
+    /* тема до отрисовки: без мигания */
+    try { var t = localStorage.getItem("theme"); document.documentElement.dataset.theme = t === "light" ? "light" : "dark"; } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html">Steam&nbsp;Games&nbsp;<span>Market</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+        <span class="theme-toggle__label">Тёмная тема</span>
+      </button>
+      <button class="header__burger" type="button" data-burger aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <span class="header__burger-line"></span>
+      </button>
+      <nav class="header__nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="header__list">
+          <li><a class="header__link" href="index.html">Главная</a></li>
+          <li><a class="header__link" href="catalog.html">Каталог</a></li>
+          <li><a class="header__link" href="prices.html">Цены и отзывы</a></li>
+          <li><a class="header__link" href="platforms.html">Платформы</a></li>
+          <li><a class="header__link" href="wishlist.html">Список желаемого</a></li>
+          <li><a class="header__link" href="about.html" aria-current="page">О данных</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="intro">
+      <div class="container">
+        <h1 class="intro__title">Источник и ограничения данных</h1>
+        <p class="intro__lead">Откуда взяты данные, как составлена выборка, что она не показывает, и кто сделал сайт.</p>
+        <p>Страница в разработке: этот каркас задаёт шапку, подвал и темы, содержимое появится в следующих этапах.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <h2 class="footer__title">Об источнике данных</h2>
+        <p class="footer__text">Данные: <a class="footer__link" href="https://www.kaggle.com/datasets/artermiloff/steam-games-dataset" rel="noopener">«Steam Games Dataset 2025»</a> (Kaggle, автор artermiloff), снимок на март 2025 года. Сайт показывает закономерности выборки, а не весь каталог Steam, и не даёт рекомендаций по цене.</p>
+        <p class="footer__text">Обложки подгружаются с серверов Steam и принадлежат правообладателям. Покупка на сайте не предусмотрена, цены справочные.</p>
+      </div>
+      <div>
+        <h2 class="footer__title">Разделы</h2>
+        <ul class="footer__list">
+          <li><a class="footer__link" href="catalog.html">Каталог</a></li>
+          <li><a class="footer__link" href="about.html">О данных</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
