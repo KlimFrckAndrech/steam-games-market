@@ -12,7 +12,7 @@
 - GitHub Pages: _будет добавлена после публикации_
 - Набор данных (Kaggle): https://www.kaggle.com/datasets/artermiloff/steam-games-dataset
   — «Steam Games Dataset 2025», автор artermiloff. Версия и дата скачивания: _заполнить_
-- Ноутбук подготовки данных (Google Colab): _будет добавлена_
+- Ноутбук подготовки данных (Google Colab): https://colab.research.google.com/github/KlimFrckAndrech/steam-games-market/blob/main/notebooks/steam_data_prep.ipynb
 
 ## Скриншоты
 
