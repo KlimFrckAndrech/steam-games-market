@@ -2,6 +2,7 @@
 import { loadGames } from "./data.js";
 import { createGameCard } from "./game-card.js";
 import { formatInt } from "./format.js";
+import { openQuickView } from "./quick-view.js";
 
 const PAGE_SIZE = 12;
 const root = document.querySelector("[data-catalog]");
@@ -97,7 +98,7 @@ function render(scroll = false) {
   state.page = Math.min(state.page, pages);
   const slice = filtered.slice((state.page - 1) * PAGE_SIZE, state.page * PAGE_SIZE);
 
-  dom.grid.replaceChildren(...slice.map((g) => createGameCard(g, announce)));
+  dom.grid.replaceChildren(...slice.map((g) => createGameCard(g, announce, openQuickView)));
   dom.count.textContent = `Найдено игр: ${formatInt(filtered.length)} из ${formatInt(games.length)}`;
   if (!filtered.length) setStatus("empty", "Под эти условия ничего не подошло. Смягчите фильтры или сбросьте их.");
   else setStatus(null);

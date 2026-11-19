@@ -1,0 +1,1 @@
+.modal--wide { width: min(64rem, calc(100% - 2 * var(--space-4))); }

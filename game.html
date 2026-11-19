@@ -38,14 +38,66 @@
     </div>
   </header>
 
-  <main id="main">
-    <section class="intro">
-      <div class="container">
-        <h1 class="intro__title">Карточка игры</h1>
-        <p class="intro__lead">Описание, цена, платформы, доля положительных отзывов и похожие игры. Игра выбирается по параметру адреса.</p>
-        <p>Страница в разработке: этот каркас задаёт шапку, подвал и темы, содержимое появится в следующих этапах.</p>
-      </div>
-    </section>
+  <main id="main" data-game>
+    <div class="container">
+      <div class="state" data-status hidden></div>
+      <p class="visually-hidden" role="status" data-live></p>
+    </div>
+
+    <article data-article hidden>
+      <section class="game-hero container" aria-labelledby="game-title">
+        <img class="game-hero__cover" data-cover alt="" width="460" height="215">
+        <div class="game-hero__info">
+          <h1 class="game-hero__title" id="game-title" data-title></h1>
+          <p class="game-hero__price" data-price></p>
+          <p class="game-hero__meta" data-date></p>
+          <p class="game-hero__meta" data-genres></p>
+          <p class="game-hero__desc" data-desc></p>
+          <div data-wish></div>
+        </div>
+        <ul class="gallery" data-gallery aria-label="Скриншоты игры"></ul>
+      </section>
+
+      <section class="container game-block" aria-labelledby="platforms-title">
+        <h2 id="platforms-title">Платформы и русская локализация</h2>
+        <ul class="badge-list" data-platforms></ul>
+      </section>
+
+      <section class="container game-block" aria-labelledby="score-title">
+        <h2 id="score-title">Отзывы игроков</h2>
+        <div class="score">
+          <p class="score__value" data-pct></p>
+          <div class="score__bar" data-bar role="img"><div class="score__fill" data-fill></div></div>
+          <p class="score__text" data-reviews></p>
+          <p class="score__text" data-balance></p>
+          <p class="score__text"><button class="tip__button" type="button" data-modal="pct">Как считается доля положительных отзывов</button></p>
+        </div>
+      </section>
+
+      <section class="container text game-block" aria-labelledby="read-title">
+        <h2 id="read-title">Как читать эту карточку</h2>
+        <p>Цена указана в долларах США и носит справочный характер: сайт ничего не продаёт, а цена в магазине зависит от региона и скидок. Доля положительных отзывов показывает, какая часть отзывов игры положительная, а число отзывов говорит, насколько этому проценту можно доверять: когда отзывов сотни тысяч, процент устойчив, а при полусотне он заметно колеблется.</p>
+        <p>Индекс баланса отзывов от −100 до +100 переводит долю в словесную оценку, например «умеренное позитивное восприятие». Всё это описывает выборку из набора данных на март 2025 года: сегодняшние цифры в Steam могут отличаться. Сравнение с другими играми сделано по ценовому диапазону и году выхода, но оно не доказывает, что цена или год влияют на отзывы.</p>
+        <h3>Что говорят данные об этой игре</h3>
+        <ul class="text__list" data-findings></ul>
+      </section>
+
+      <section class="container game-block" aria-labelledby="similar-title" data-similar-section>
+        <h2 id="similar-title">Похожие игры по цене и жанру</h2>
+        <ul class="catalog__grid" data-similar></ul>
+      </section>
+
+      <section class="container">
+        <div class="cta">
+          <h2>Что дальше</h2>
+          <p class="cta__text">Вернитесь в каталог, чтобы найти другие игры, или соберите список желаемого и посчитайте его стоимость.</p>
+          <div class="cta__actions">
+            <a class="button" href="catalog.html">В каталог</a>
+            <a class="button button--outline" href="wishlist.html">Список желаемого</a>
+          </div>
+        </div>
+      </section>
+    </article>
   </main>
 
   <footer class="footer">
@@ -60,6 +112,8 @@
         <ul class="footer__list">
           <li><a class="footer__link" href="catalog.html">Каталог</a></li>
           <li><a class="footer__link" href="about.html">О данных</a></li>
+          <li><button class="footer__link footer__button" type="button" data-modal="limits">Ограничения данных</button></li>
+          <li><button class="footer__link footer__button" type="button" data-modal="covers">Условия использования обложек</button></li>
         </ul>
       </div>
     </div>

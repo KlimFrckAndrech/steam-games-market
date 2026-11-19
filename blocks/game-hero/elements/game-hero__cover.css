@@ -1,0 +1,1 @@
+.game-hero__cover { display: block; width: 100%; height: auto; aspect-ratio: 460 / 215; object-fit: cover; border-radius: var(--radius); background: var(--color-border); }
