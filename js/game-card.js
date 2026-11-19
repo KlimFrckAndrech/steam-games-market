@@ -47,7 +47,7 @@ export function createWishButton(game, onMessage) {
   return btn;
 }
 
-export function createGameCard(game, onMessage) {
+export function createGameCard(game, onMessage, onQuick) {
   const card = el("li", "game-card");
   const link = el("a", "game-card__cover-link");
   link.href = `game.html?id=${game.id}`;
@@ -85,6 +85,13 @@ export function createGameCard(game, onMessage) {
   more.href = `game.html?id=${game.id}`;
   more.setAttribute("aria-label", `Подробнее об игре «${game.name}»`);
   actions.append(more, createWishButton(game, onMessage));
+  if (onQuick) {
+    const quick = el("button", "game-card__quick", "Быстрый просмотр");
+    quick.type = "button";
+    quick.setAttribute("aria-label", `Быстрый просмотр игры «${game.name}»`);
+    quick.addEventListener("click", () => onQuick(game, quick));
+    actions.append(quick);
+  }
 
   body.append(title, meta, price, score, badges, actions);
   card.append(link, body);

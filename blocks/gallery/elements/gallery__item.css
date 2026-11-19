@@ -1,0 +1,2 @@
+.gallery__item { display: block; width: 100%; padding: 0; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-border); overflow: hidden; cursor: zoom-in; }
+.gallery__item img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }

@@ -1,0 +1,5 @@
+.game-hero { display: grid; gap: var(--space-6); padding-block: var(--space-6); }
+@media (min-width: 768px) {
+  .game-hero { grid-template-columns: minmax(0, 3fr) minmax(0, 4fr); align-items: start; }
+  .game-hero .gallery { grid-column: 1 / -1; }
+}

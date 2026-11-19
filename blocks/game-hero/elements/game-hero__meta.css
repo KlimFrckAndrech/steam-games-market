@@ -1,0 +1,2 @@
+.game-hero__meta { margin: 0 0 var(--space-1); color: var(--color-muted); }
+.game-hero__desc { margin: var(--space-4) 0; max-width: 60ch; }

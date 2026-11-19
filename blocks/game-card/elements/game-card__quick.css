@@ -1,0 +1,1 @@
+.game-card__quick { flex-basis: 100%; min-height: 2.5rem; padding: 0; border: 0; background: transparent; color: var(--color-link); text-decoration: underline; cursor: pointer; }
