@@ -1,0 +1,4 @@
+.chart__caption { margin: var(--space-4) 0 var(--space-2); color: var(--color-muted); font-size: 0.9375rem; }
+.chart__conclusion { max-width: 70ch; margin: 0 0 var(--space-4); }
+.chart__nochart { padding: var(--space-3); border: 1px dashed var(--color-border); border-radius: var(--radius); }
+.chart__nochart[hidden] { display: none; }

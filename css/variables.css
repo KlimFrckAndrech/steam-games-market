@@ -30,6 +30,9 @@
   --color-accent-hover: #4e6b0d; /* белый текст 6,12:1 */
   --color-on-accent: #ffffff;
   --color-focus: #1b9af7;
+  /* Цвета рядов графиков (не менее 3:1 с поверхностью) */
+  --chart-1: #1b9af7;
+  --chart-2: #e0a93b;
 }
 
 :root[data-theme="light"] {
@@ -46,6 +49,8 @@
   --color-focus: #5a4fcf;
   /* #00D1B2 даёт 1,75:1 на светлом фоне, поэтому для текста не используется, только декор */
   --color-decor: #00d1b2;
+  --chart-1: #5a4fcf;
+  --chart-2: #b45309;
 }
 
 @media (min-width: 768px) {

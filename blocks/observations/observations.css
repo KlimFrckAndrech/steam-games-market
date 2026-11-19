@@ -1,0 +1,2 @@
+.observations { display: grid; gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
+@media (min-width: 768px) { .observations { grid-template-columns: repeat(3, 1fr); } }
