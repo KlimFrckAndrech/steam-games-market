@@ -1,0 +1,2 @@
+.modal__cover { display: block; width: 100%; height: auto; margin-bottom: var(--space-4); border-radius: var(--radius); background: var(--color-border); }
+.modal__shot { display: block; width: 100%; height: auto; border-radius: var(--radius); }
