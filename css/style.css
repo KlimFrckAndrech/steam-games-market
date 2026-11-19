@@ -77,3 +77,14 @@
 @import url("../blocks/tip/elements/tip__button.css");
 @import url("../blocks/text/elements/text__list.css");
 @import url("../blocks/game-block/game-block.css");
+@import url("../blocks/chart/chart.css");
+@import url("../blocks/chart/elements/chart__title.css");
+@import url("../blocks/chart/elements/chart__canvas-box.css");
+@import url("../blocks/chart/elements/chart__caption.css");
+@import url("../blocks/chart/elements/chart__details.css");
+@import url("../blocks/data-table/data-table.css");
+@import url("../blocks/observations/observations.css");
+@import url("../blocks/observations/elements/observations__item.css");
+@import url("../blocks/illustration/illustration.css");
+@import url("../blocks/intro/modifiers/intro--split.css");
+@import url("../blocks/text/elements/text__lead.css");

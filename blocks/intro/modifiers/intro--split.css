@@ -1,0 +1,3 @@
+.intro--split { display: grid; gap: var(--space-6); align-items: center; }
+.intro--split .intro__title { max-width: none; }
+@media (min-width: 1024px) { .intro--split { grid-template-columns: 1fr 30rem; gap: var(--space-8); } }

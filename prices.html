@@ -10,6 +10,7 @@
     try { var t = localStorage.getItem("theme"); document.documentElement.dataset.theme = t === "light" ? "light" : "dark"; } catch (e) {}
   </script>
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </head>
 <body>
@@ -38,12 +39,92 @@
     </div>
   </header>
 
-  <main id="main">
-    <section class="intro">
-      <div class="container">
+  <main id="main" data-prices>
+    <section class="intro intro--split container">
+      <div>
         <h1 class="intro__title">Как цена связана с отзывами</h1>
-        <p class="intro__lead">График по ценовым диапазонам, число игр по годам и жанрам, наблюдения по выборке.</p>
-        <p>Страница в разработке: этот каркас задаёт шапку, подвал и темы, содержимое появится в следующих этапах.</p>
+        <p class="intro__lead">Представьте разработчика-одиночку, который выпускает игру в Steam. Сделать её бесплатной ради аудитории, взять пять долларов или рискнуть двадцатью? Рынок не даёт готового ответа, но данные показывают, как устроены цены вокруг. Медианная цена игр набора по годам держится у 5–7 долларов, а доля положительных отзывов в разных ценовых диапазонах отличается всего на несколько пунктов. Мы смотрим на это без прогнозов: сайт описывает выборку и не советует, какую цену ставить.</p>
+      </div>
+      <img class="illustration" src="images/illustration-prices-960.webp" srcset="images/illustration-prices-480.webp 480w, images/illustration-prices-960.webp 960w" sizes="(min-width: 1024px) 480px, 100vw" width="960" height="540" alt="Иллюстрация: столбики диаграммы и ценники 0 $ и 9,99 $">
+    </section>
+
+    <div class="container"><div class="state" data-status hidden></div></div>
+
+    <section class="container game-block" aria-labelledby="bins-title">
+      <h2 id="bins-title">Ценовой диапазон и доля положительных отзывов</h2>
+      <figure class="chart" data-fig="bins">
+          <figcaption class="chart__title">Медианная доля положительных отзывов по ценовым диапазонам (выборка)</figcaption>
+          <div class="chart__canvas-box"><canvas role="img" aria-label="Столбчатая диаграмма медианной доли положительных отзывов по шести ценовым диапазонам"></canvas></div>
+          <p class="chart__caption" data-caption></p>
+          <p class="chart__conclusion"><strong>Вывод.</strong> Медианная доля положительных отзывов растёт от 79,6 % у бесплатных игр до 84,1 % в диапазоне 10–20 $, затем снижается до 81,5 % и 82,0 %. Разброс между диапазонами около 4,5 процентного пункта: он заметен, но невелик. Выборка стратифицирована по цене, поэтому число игр в диапазонах отражает метод отбора, а не структуру рынка.</p>
+          <p class="chart__nochart" data-nochart hidden>Библиотека графиков не загрузилась, поэтому данные показаны только таблицей.</p>
+          <details class="chart__details">
+            <summary>Данные графика в таблице</summary>
+            <div class="chart__table-wrap"><table class="data-table"></table></div>
+          </details>
+        </figure>
+    </section>
+
+    <section class="container" aria-labelledby="cause-title">
+      <aside class="tip">
+        <h2 class="tip__title" id="cause-title">Связь не означает причину</h2>
+        <p class="tip__text">В диапазоне 10–20 $ медианная доля положительных отзывов выше, чем у бесплатных игр. Это связь, а не причина: платные игры могут чаще выпускать опытные студии, а бесплатные привлекают игроков, которые охотнее ставят низкую оценку. Цена сама по себе отзывы не меняет, и по этим данным нельзя сказать, какую цену ставить.</p>
+      </aside>
+    </section>
+
+    <section class="container game-block" aria-labelledby="obs-title">
+      <h2 id="obs-title">Три наблюдения для издателя</h2>
+      <ul class="observations">
+        <li class="observations__item">
+          <h3 class="observations__title">Бесплатные игры</h3>
+          <p>Медианная доля положительных отзывов у бесплатных игр выборки — 79,6 %, самая низкая среди ценовых диапазонов. Среди жанров медиана 68,0 % у Massively Multiplayer, где медианная цена равна нулю.</p>
+        </li>
+        <li class="observations__item">
+          <h3 class="observations__title">Средний диапазон</h3>
+          <p>Наибольшая медианная доля, 84,1 %, приходится на диапазон 10–20 $. В диапазонах 20–40 $ и от 40 $ она ниже: 81,5 % и 82,0 %.</p>
+        </li>
+        <li class="observations__item">
+          <h3 class="observations__title">Рост числа игр</h3>
+          <p>Число игр набора с не менее чем 50 отзывами выросло с 398 в 2013 году до 1 098 в 2014-м и 4 232 в 2024-м. Медианная цена в 2014–2024 годах держится у 5–7 $.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="container game-block" aria-labelledby="years-title">
+      <h2 id="years-title">Игры по годам выхода и жанрам</h2>
+      <p class="text__lead">Эти графики построены по всем играм набора, прошедшим фильтры, а не по выборке в каталоге.</p>
+      <figure class="chart" data-fig="years">
+          <figcaption class="chart__title">Число игр с не менее чем 50 отзывами и медианная доля положительных отзывов по годам</figcaption>
+          <div class="chart__canvas-box"><canvas role="img" aria-label="Комбинированная диаграмма: число игр по годам выхода и медианная доля положительных отзывов"></canvas></div>
+          <p class="chart__caption" data-caption></p>
+          <p class="chart__conclusion"><strong>Вывод.</strong> Число игр с не менее чем 50 отзывами растёт: 398 игр 2013 года, 1 098 — 2014-го, 4 232 — 2024-го. Медианная доля положительных отзывов в 2015 году была 77,1 %, в 2024-м — 86,5 %. Рост числа игр отражает состав набора на март 2025 года, причины роста по этим данным определить нельзя.</p>
+          <p class="chart__nochart" data-nochart hidden>Библиотека графиков не загрузилась, поэтому данные показаны только таблицей.</p>
+          <details class="chart__details">
+            <summary>Данные графика в таблице</summary>
+            <div class="chart__table-wrap"><table class="data-table"></table></div>
+          </details>
+        </figure>
+      <figure class="chart" data-fig="genres">
+          <figcaption class="chart__title">Медианная доля положительных отзывов по самым крупным жанрам</figcaption>
+          <div class="chart__canvas-box"><canvas role="img" aria-label="Горизонтальная столбчатая диаграмма медианной доли положительных отзывов по десяти жанрам"></canvas></div>
+          <p class="chart__caption" data-caption></p>
+          <p class="chart__conclusion"><strong>Вывод.</strong> Среди десяти самых крупных жанров медианная доля положительных отзывов колеблется от 79,0 до 83,7 %. Исключение — Massively Multiplayer: 68,0 %. Игра может относиться к нескольким жанрам сразу, поэтому сумма игр по жанрам больше общего числа. Самый крупный жанр — Indie, 17 070 игр.</p>
+          <p class="chart__nochart" data-nochart hidden>Библиотека графиков не загрузилась, поэтому данные показаны только таблицей.</p>
+          <details class="chart__details">
+            <summary>Данные графика в таблице</summary>
+            <div class="chart__table-wrap"><table class="data-table"></table></div>
+          </details>
+        </figure>
+    </section>
+
+    <section class="container">
+      <div class="cta">
+        <h2>Что дальше</h2>
+        <p class="cta__text">Узнайте, на каких платформах выходят игры и отличаются ли отзывы игр с русским языком и без него.</p>
+        <div class="cta__actions">
+          <a class="button" href="platforms.html">Платформы и язык</a>
+          <a class="button button--outline" href="catalog.html">В каталог</a>
+        </div>
       </div>
     </section>
   </main>
