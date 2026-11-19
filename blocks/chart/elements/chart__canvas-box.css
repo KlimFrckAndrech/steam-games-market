@@ -1,0 +1,4 @@
+.chart__canvas-box { position: relative; height: 18rem; }
+.chart__canvas-box[hidden] { display: none; }
+@media (min-width: 768px) { .chart__canvas-box { height: 24rem; } }
+.chart__canvas-box canvas { display: block; max-width: 100%; }

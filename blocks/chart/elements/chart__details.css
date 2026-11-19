@@ -1,0 +1,2 @@
+.chart__details summary { min-height: 2.75rem; display: flex; align-items: center; color: var(--color-link); cursor: pointer; }
+.chart__table-wrap { overflow-x: auto; }
