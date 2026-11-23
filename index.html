@@ -9,7 +9,9 @@
     /* тема до отрисовки: без мигания */
     try { var t = localStorage.getItem("theme"); document.documentElement.dataset.theme = t === "light" ? "light" : "dark"; } catch (e) {}
   </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </head>
 <body>
@@ -38,12 +40,84 @@
     </div>
   </header>
 
-  <main id="main">
-    <section class="intro">
-      <div class="container">
-        <h1 class="intro__title">Рынок видеоигр Steam в данных</h1>
-        <p class="intro__lead">Подборка игр с лучшими отзывами, новинки по дате выхода и объяснение, как читать цену и отзывы. Все цифры относятся к выборке из набора данных за март 2025 года.</p>
-        <p>Страница в разработке: этот каркас задаёт шапку, подвал и темы, содержимое появится в следующих этапах.</p>
+  <main id="main" data-home>
+    <section class="hero container" aria-labelledby="home-title">
+      <div class="hero__text">
+        <h1 class="hero__title" id="home-title">Рынок видеоигр Steam в данных</h1>
+        <p class="hero__lead">Какие игры игроки принимают лучше всего, что вышло недавно и как цена связана с отзывами. В основе сайта выборка из <strong data-total>…</strong> игр из набора данных за март 2025 года: она показывает закономерности, а не весь каталог Steam.</p>
+        <div class="cta__actions">
+          <a class="button" href="catalog.html">Открыть каталог</a>
+          <a class="button button--outline" href="prices.html">Цена и отзывы</a>
+        </div>
+      </div>
+      <div class="hero__collage">
+        <img class="illustration hero__pic hero__pic--main" src="images/illustration-hero1-960.webp" srcset="images/illustration-hero1-480.webp 480w, images/illustration-hero1-960.webp 960w" sizes="(min-width: 1024px) 380px, 100vw" width="960" height="540" alt="Иллюстрация: геймпад с цветными кнопками">
+        <img class="illustration hero__pic hero__pic--a" src="images/illustration-hero2-960.webp" srcset="images/illustration-hero2-480.webp 480w, images/illustration-hero2-960.webp 960w" sizes="(min-width: 1024px) 200px, 50vw" width="960" height="540" alt="Иллюстрация: игровая клавиатура с подсвеченными клавишами" loading="lazy">
+        <img class="illustration hero__pic hero__pic--b" src="images/illustration-hero3-960.webp" srcset="images/illustration-hero3-480.webp 480w, images/illustration-hero3-960.webp 960w" sizes="(min-width: 1024px) 200px, 50vw" width="960" height="540" alt="Иллюстрация: игровая гарнитура" loading="lazy">
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="state" data-status hidden></div>
+      <p class="visually-hidden" role="status" data-live></p>
+    </div>
+
+    <section class="container game-block" aria-labelledby="best-title">
+      <h2 id="best-title">Лучшие по отзывам</h2>
+      <p class="text__lead">Игры выборки с наибольшей долей положительных отзывов. Чтобы процент был надёжным, учитываются игры минимум с 5 000 отзывов.</p>
+      <div class="slider" data-slider>
+        <ul class="slider__track" data-best></ul>
+        <button class="swiper-button-prev" type="button" aria-label="Предыдущие игры"></button>
+        <button class="swiper-button-next" type="button" aria-label="Следующие игры"></button>
+      </div>
+    </section>
+
+    <section class="container game-block" aria-labelledby="new-title">
+      <h2 id="new-title">Новинки</h2>
+      <p class="text__lead">Самые свежие игры выборки по дате выхода. Набор собран в марте 2025 года, поэтому последние игры вышли в конце 2024-го.</p>
+      <ul class="catalog__grid" data-new></ul>
+    </section>
+
+    <section class="container game-block split" aria-labelledby="read-title">
+      <div class="text">
+        <h2 id="read-title">Как читать цену и отзывы</h2>
+        <p>Цена указана в долларах США и показывает, сколько игра стоила на момент сбора данных. Игры с ценой 0 мы считаем бесплатными. Доля положительных отзывов — это процент положительных оценок среди всех отзывов. Чем больше отзывов, тем надёжнее процент, поэтому в выборку попали только игры минимум с 50 отзывами.</p>
+        <p>Высокая доля не означает коммерческого успеха, а низкая цена не объясняет оценку: мы показываем связи внутри выборки, а не причины. Как это выглядит на графиках, смотрите на странице «Цена и отзывы».</p>
+      </div>
+      <img class="illustration" src="images/illustration-reading-960.webp" srcset="images/illustration-reading-480.webp 480w, images/illustration-reading-960.webp 960w" sizes="(min-width: 1024px) 400px, 100vw" width="960" height="540" alt="Иллюстрация: лупа, звезда и столбчатая диаграмма" loading="lazy">
+    </section>
+
+    <section class="container game-block" aria-labelledby="faq-title">
+      <h2 id="faq-title">Можно ли доверять выборке</h2>
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__question">Это все игры Steam?</summary>
+          <p class="faq__answer">Нет. Набор данных за март 2025 года содержит почти 95 тысяч записей, а на сайте показана выборка примерно из полутора тысяч игр. Она описывает закономерности внутри себя и не заменяет полный каталог магазина.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Как отбирались игры?</summary>
+          <p class="faq__answer">Мы оставили игры минимум с 50 отзывами, убрали игры 18+ и игры с тегами для взрослых и взяли их примерно поровну по годам выхода с 2009 по 2024 и по ценовым диапазонам. Поэтому в выборке много малоизвестных игр, а не только самые популярные.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Можно ли по этим данным выбрать цену для своей игры?</summary>
+          <p class="faq__answer">Нет. Сайт показывает, как цена и отзывы связаны в выборке, но связь не означает причину, и конкретную цену он не рекомендует.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Почему цены не совпадают со Steam?</summary>
+          <p class="faq__answer">Данные собраны в марте 2025 года, а цены и скидки в Steam меняются и зависят от региона. Цифры на сайте справочные, купить игру здесь нельзя.</p>
+        </details>
+        <p><button class="tip__button" type="button" data-modal="limits">Подробнее об ограничениях данных</button></p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="cta">
+        <h2>Что дальше</h2>
+        <p class="cta__text">Откройте каталог, выберите жанр и отберите игры по цене, платформе и языку. Понравившиеся добавьте в список желаемого.</p>
+        <div class="cta__actions">
+          <a class="button" href="catalog.html">Перейти в каталог</a>
+          <a class="button button--outline" href="about.html">О данных</a>
+        </div>
       </div>
     </section>
   </main>

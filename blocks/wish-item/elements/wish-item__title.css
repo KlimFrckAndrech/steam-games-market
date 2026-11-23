@@ -1,0 +1,4 @@
+.wish-item__title { margin: 0; font-size: 1.125rem; }
+.wish-item__link { color: var(--color-text); text-decoration: none; overflow-wrap: anywhere; }
+.wish-item__link:hover { color: var(--color-link); text-decoration: underline; }
+.wish-item__price { margin: 0; color: var(--color-muted); }

@@ -38,12 +38,54 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" data-wishlist>
     <section class="intro">
       <div class="container">
         <h1 class="intro__title">Список желаемого</h1>
-        <p class="intro__lead">До десяти игр в списке, цена со скидкой, итог списка и стоимость часа игры. Покупки на сайте нет.</p>
-        <p>Страница в разработке: этот каркас задаёт шапку, подвал и темы, содержимое появится в следующих этапах.</p>
+        <p class="intro__lead">Соберите до десяти игр, введите скидку и время игры, и калькулятор покажет цену со скидкой, итог списка и стоимость часа. Покупки на сайте нет, всё считается только для ориентира. Список хранится в вашем браузере и никуда не отправляется.</p>
+      </div>
+    </section>
+
+    <div class="container"><div class="state" data-status hidden></div></div>
+
+    <section class="container game-block" aria-labelledby="list-title">
+      <h2 id="list-title">Ваши игры</h2>
+      <div class="state" data-empty tabindex="-1" hidden>
+        <p class="state__text">Список пока пуст. Добавьте игры кнопкой «В список» в каталоге или на странице игры.</p>
+        <a class="button" href="catalog.html">Перейти в каталог</a>
+      </div>
+      <ul class="wish-list" data-list></ul>
+    </section>
+
+    <section class="container game-block" aria-labelledby="calc-title" data-calc hidden>
+      <h2 id="calc-title">Итог</h2>
+      <div class="calc">
+        <dl class="calc__totals">
+          <dt>Игр в списке</dt><dd data-count></dd>
+          <dt>Итого со скидками</dt><dd class="calc__sum" data-sum aria-live="polite"></dd>
+          <dt>Экономия по введённым скидкам</dt><dd data-saving></dd>
+        </dl>
+        <div class="cta__actions">
+          <button class="button" type="button" data-summary-btn>Показать итог списка</button>
+          <button class="button button--outline" type="button" data-clear>Очистить список</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container text game-block" aria-labelledby="how-title">
+      <h2 id="how-title">Как работает калькулятор</h2>
+      <p>Цена со скидкой равна цене игры, умноженной на единицу минус скидка, делённую на сто: при цене 20 $ и скидке 25 % получится 15 $. Итог списка — сумма цен со скидкой всех игр. Стоимость часа игры — цена со скидкой, делённая на среднее время игры в часах.</p>
+      <p>Скидку вы вводите сами: в наборе данных она есть у части игр, но не сказано, учтена ли она уже в цене, поэтому подставлять её автоматически мы не стали. Время игры подставляется из набора, если оно там есть, но это среднее время игроков, а не время прохождения, и его можно поменять. Если времени нет, стоимость часа не считается. В списке может быть не больше десяти игр, введённые значения сохраняются в браузере.</p>
+    </section>
+
+    <section class="container">
+      <div class="cta">
+        <h2>Что дальше</h2>
+        <p class="cta__text">Вернитесь в каталог за новыми играми или узнайте, откуда взяты данные и что они не показывают.</p>
+        <div class="cta__actions">
+          <a class="button" href="catalog.html">В каталог</a>
+          <a class="button button--outline" href="about.html">О данных</a>
+        </div>
       </div>
     </section>
   </main>

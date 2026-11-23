@@ -1,0 +1,2 @@
+.hero__collage { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.hero__pic--main { grid-column: 1 / -1; }

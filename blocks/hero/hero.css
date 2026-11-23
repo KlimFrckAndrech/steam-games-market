@@ -1,0 +1,2 @@
+.hero { display: grid; gap: var(--space-8); padding-block: var(--space-8); align-items: center; }
+@media (min-width: 1024px) { .hero { grid-template-columns: 1.1fr 1fr; padding-block: var(--space-12); } }
