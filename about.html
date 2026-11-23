@@ -9,6 +9,33 @@
     /* тема до отрисовки: без мигания */
     try { var t = localStorage.getItem("theme"); document.documentElement.dataset.theme = t === "light" ? "light" : "dark"; } catch (e) {}
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Steam Games Dataset 2025",
+  "description": "Описания игр Steam (названия, даты выхода, цены, платформы, языки, жанры, отзывы), снимок на март 2025 года. На сайте используется выборка около 1,5 тысячи игр.",
+  "url": "https://www.kaggle.com/datasets/artermiloff/steam-games-dataset",
+  "creator": {
+    "@type": "Person",
+    "name": "artermiloff"
+  },
+  "includedInDataCatalog": {
+    "@type": "DataCatalog",
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com"
+  },
+  "temporalCoverage": "2009/2024",
+  "datePublished": "2025-03",
+  "inLanguage": "en",
+  "keywords": [
+    "Steam",
+    "видеоигры",
+    "отзывы",
+    "цены"
+  ]
+}
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/main.js"></script>
 </head>
@@ -38,12 +65,58 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" data-about>
     <section class="intro">
       <div class="container">
         <h1 class="intro__title">Источник и ограничения данных</h1>
-        <p class="intro__lead">Откуда взяты данные, как составлена выборка, что она не показывает, и кто сделал сайт.</p>
-        <p>Страница в разработке: этот каркас задаёт шапку, подвал и темы, содержимое появится в следующих этапах.</p>
+        <p class="intro__lead">Откуда взяты данные, как из них получилась выборка, что она не показывает и кто сделал сайт. Страница нужна, чтобы любой вывод на других страницах можно было проверить и оценить честно.</p>
+      </div>
+    </section>
+
+    <section class="container game-block" aria-labelledby="source-title">
+      <h2 id="source-title">Источник и версия набора</h2>
+      <p class="text__lead">Сайт построен на открытом наборе данных «Steam Games Dataset 2025» (автор artermiloff) с Kaggle. Использован файл <code>games_march2025_full.csv</code>: 94 948 записей и 47 столбцов, снимок на март 2025 года.</p>
+      <p><a href="https://www.kaggle.com/datasets/artermiloff/steam-games-dataset" rel="noopener">Страница набора на Kaggle</a></p>
+      <div class="state" data-status hidden></div>
+      <div class="chart__table-wrap"><table class="data-table"><caption class="spec-table__caption">Выборка в цифрах (считается по games.json)</caption><thead><tr><th scope="col">Показатель</th><th scope="col">Значение</th></tr></thead><tbody data-facts></tbody></table></div>
+    </section>
+
+    <section class="container game-block" aria-labelledby="prep-title">
+      <h2 id="prep-title">Как готовили данные</h2>
+      <p>Данные обработаны скриптом на Python в Google Colab: <a href="https://colab.research.google.com/github/KlimFrckAndrech/steam-games-market/blob/main/notebooks/steam_data_prep.ipynb" rel="noopener">открыть ноутбук</a>. Каждый шаг фиксируется в воронке: сначала убираются дубликаты и игры вне 2009–2024 годов (набор собран в марте 2025, поэтому 2025 год неполный), затем остаются игры минимум с 50 отзывами, исключаются игры 18+ и с тегами для взрослых, а также программы, не являющиеся играми. Из подходящих игр выбрано около полутора тысяч, поровну по годам выхода и ценовым диапазонам.</p>
+      <div class="chart__table-wrap"><table class="data-table"><caption class="spec-table__caption">Воронка отбора игр</caption><thead><tr><th scope="col">Шаг</th><th scope="col">Записей осталось</th></tr></thead><tbody><tr><th scope="row">Исходные записи</th><td>94 948</td></tr><tr><th scope="row">Без дубликатов по названию</th><td>94 191</td></tr><tr><th scope="row">Год выхода 2009–2024</th><td>90 065</td></tr><tr><th scope="row">Не менее 50 отзывов</th><td>28 429</td></tr><tr><th scope="row">Без возрастного ограничения 18+</th><td>28 350</td></tr><tr><th scope="row">Без тегов для взрослых</th><td>25 835</td></tr><tr><th scope="row">Без программ, не являющихся играми</th><td>25 817</td></tr><tr><th scope="row">Итоговая выборка</th><td>1 536</td></tr></tbody></table></div>
+      <p>Доля положительных отзывов пересчитывается по числам положительных и отрицательных отзывов. У части игр этих чисел в наборе нет, и для них взята готовая доля; такие игры помечены полем <code>pctSrc</code>. Игры с ценой 0 считаются бесплатными.</p>
+      <div class="chart__table-wrap"><table class="data-table"><caption class="spec-table__caption">Схема полей games.json</caption><thead><tr><th scope="col">Поле games.json</th><th scope="col">Столбец набора</th><th scope="col">Что означает</th></tr></thead><tbody><tr><th scope="row">id</th><td>appid</td><td>Номер игры в Steam; по нему строится ссылка на страницу игры</td></tr><tr><th scope="row">name</th><td>name</td><td>Название; при совпадении названий оставлена запись с большим числом отзывов</td></tr><tr><th scope="row">date, year</th><td>release_date</td><td>Дата выхода, приведённая к виду ГГГГ-ММ-ДД, и год</td></tr><tr><th scope="row">price, priceBin</th><td>price</td><td>Цена в долларах США; 0 означает бесплатную игру; диапазон: Бесплатно, до 5, 5–10, 10–20, 20–40, от 40</td></tr><tr><th scope="row">platforms</th><td>windows, mac, linux</td><td>Список платформ, на которых игра выходит</td></tr><tr><th scope="row">ru, ruAudio</th><td>supported_languages, full_audio_languages</td><td>Есть ли русский язык (интерфейс или субтитры) и русская озвучка; логические значения</td></tr><tr><th scope="row">genres</th><td>genres</td><td>Список жанров; служебные метки вроде Free To Play и Early Access убраны</td></tr><tr><th scope="row">pctPos, balance, pctSrc</th><td>positive, negative, pct_pos_total</td><td>Доля положительных отзывов и индекс баланса; пересчитаны по числам отзывов, а если их нет, взята готовая доля (pctSrc: calc или steam)</td></tr><tr><th scope="row">reviews</th><td>num_reviews_total</td><td>Число отзывов; не менее 50</td></tr><tr><th scope="row">playtimeH</th><td>average_playtime_forever</td><td>Среднее время игры в часах; есть не у всех игр</td></tr><tr><th scope="row">cover, shots</th><td>header_image, screenshots</td><td>Ссылки на обложку и до трёх скриншотов на серверах Steam</td></tr><tr><th scope="row">desc</th><td>short_description</td><td>Краткое описание, не длиннее 220 знаков</td></tr><tr><th scope="row">discount</th><td>discount</td><td>Скидка, % на момент сбора данных; не сказано, учтена ли она в цене</td></tr></tbody></table></div>
+    </section>
+
+    <section class="container game-block" aria-labelledby="limits-title">
+      <h2 id="limits-title">Ограничения набора и условия использования обложек</h2>
+      <div class="text">
+        <p>Выборка не отражает весь каталог Steam: игры отбирались по годам и ценам, поэтому число игр в группах — следствие метода, а не структура рынка. Цены, скидки и отзывы относятся к марту 2025 года и сегодня могут быть другими. Среднее время игры есть примерно у трети игр, и это не время прохождения. Расхождение между готовой долей положительных отзывов и пересчётом по числам отзывов у многих игр превышает 10 пунктов индекса баланса, поэтому значения сайта могут отличаться от витрины Steam.</p>
+        <p>Сайт показывает закономерности внутри выборки, не предсказывает успех игры и не рекомендует цену. Обложки и скриншоты принадлежат правообладателям и загружаются с серверов Steam, в репозитории их нет.</p>
+        <p><button class="tip__button" type="button" data-modal="limits">Ограничения данных</button> · <button class="tip__button" type="button" data-modal="covers">Условия использования обложек</button> · <button class="tip__button" type="button" data-modal="pct">Как считается доля положительных отзывов</button></p>
+      </div>
+    </section>
+
+    <section class="container game-block" aria-labelledby="gloss-title">
+      <h2 id="gloss-title">Глоссарий</h2>
+      <dl class="definition-list"><div class="definition-list__item"><dt class="definition-list__term">Доля положительных отзывов</dt><dd class="definition-list__desc">Процент положительных оценок среди всех отзывов игры. Считается как положительные ÷ (положительные + отрицательные) × 100. Чем больше отзывов, тем надёжнее значение: у игр с полусотней отзывов процент заметно колеблется.</dd></div><div class="definition-list__item"><dt class="definition-list__term">Индекс баланса отзывов</dt><dd class="definition-list__desc">Число от −100 до +100: положительные минус отрицательные отзывы, делённые на их сумму. Нуль означает поровну тех и других. По индексу игре присваивается словесная оценка, например «умеренное позитивное восприятие» или «баланс мнений».</dd></div><div class="definition-list__item"><dt class="definition-list__term">Ценовой диапазон</dt><dd class="definition-list__desc">Группа игр с близкой ценой в долларах США: бесплатно, до 5, 5–10, 10–20, 20–40 и от 40. Игры с ценой 0 считаются бесплатными и образуют отдельный диапазон. Диапазоны нужны, чтобы сравнивать отзывы.</dd></div><div class="definition-list__item"><dt class="definition-list__term">Платформа</dt><dd class="definition-list__desc">Операционная система, на которой запускается игра: Windows, macOS или Linux. Одна игра может выходить сразу на нескольких платформах, поэтому доли игр по платформам в сумме больше ста процентов. На сайте учитываются только эти три платформы.</dd></div><div class="definition-list__item"><dt class="definition-list__term">Локализация</dt><dd class="definition-list__desc">Перевод игры на язык игрока. На сайте отмечается наличие русского языка в интерфейсе или субтитрах и отдельно русской озвучки. Эти данные взяты из списков поддерживаемых языков в наборе, и по ним считается доля игр с русским языком на странице платформ.</dd></div><div class="definition-list__item"><dt class="definition-list__term">Выборка</dt><dd class="definition-list__desc">Часть игр, отобранная из набора данных по правилу. Здесь это около полутора тысяч игр с не менее чем 50 отзывами. Выводы по выборке верны для неё самой и не переносятся на весь Steam.</dd></div><div class="definition-list__item"><dt class="definition-list__term">Стратификация</dt><dd class="definition-list__desc">Способ отбора выборки, при котором игры берутся из групп, чтобы каждая группа была представлена. Мы брали игры по годам выхода и ценовым диапазонам, поэтому число игр в группах отражает метод отбора.</dd></div><div class="definition-list__item"><dt class="definition-list__term">Медиана</dt><dd class="definition-list__desc">Среднее по порядку значение: половина игр имеет значение ниже, половина выше. В отличие от среднего арифметического, медиана почти не зависит от единичных очень высоких или очень низких значений, поэтому подходит для цен и отзывов.</dd></div><div class="definition-list__item"><dt class="definition-list__term">Набор данных</dt><dd class="definition-list__desc">Таблица с описаниями игр, которую автор выложил на Kaggle. Это «Steam Games Dataset 2025», снимок на март 2025 года: цены, скидки и отзывы в Steam с тех пор изменились, поэтому сегодняшние цифры магазина могут не совпадать с сайтом.</dd></div><div class="definition-list__item"><dt class="definition-list__term">Порог отзывов</dt><dd class="definition-list__desc">Минимальное число отзывов, при котором игра попадает в выборку. Мы взяли 50: при меньшем числе одна оценка сдвигает долю больше чем на два процентных пункта, и процент перестаёт быть надёжным.</dd></div></dl>
+    </section>
+
+    <section class="container game-block" aria-labelledby="credits-title">
+      <h2 id="credits-title">Авторы, лицензии и источники</h2>
+      <p>Сайт сделан Александром в рамках курсовой работы «Разработка веб-сайта рынка видеоигр Steam». Репозиторий: <a href="https://github.com/KlimFrckAndrech/steam-games-market" rel="noopener">KlimFrckAndrech/steam-games-market</a>.</p>
+      <div class="chart__table-wrap"><table class="data-table"><caption class="spec-table__caption">Лицензии и источники</caption><thead><tr><th scope="col">Что</th><th scope="col">Автор или владелец</th><th scope="col">Лицензия или условия</th></tr></thead><tbody><tr><th scope="row">Код сайта</th><td>Александр (GitHub: KlimFrckAndrech)</td><td>MIT, файл LICENSE в репозитории</td></tr><tr><th scope="row">Данные игр</th><td>«Steam Games Dataset 2025», автор artermiloff, Kaggle</td><td>Условия указаны на странице набора на Kaggle; в репозитории лежит только отобранная выборка</td></tr><tr><th scope="row">Обложки и скриншоты игр</th><td>Valve и правообладатели игр</td><td>Не хранятся в репозитории, подгружаются с серверов Steam; см. условия использования</td></tr><tr><th scope="row">Оформительские иллюстрации</th><td>Собственные работы проекта (векторные рисунки, экспортированные в WebP)</td><td>Свободное использование в рамках проекта</td></tr><tr><th scope="row">Шрифт Rubik</th><td>Hubert &amp; Fischer, Meir Sadan, Cyreal</td><td>SIL Open Font License 1.1</td></tr><tr><th scope="row">Шрифт Roboto</th><td>Google</td><td>Apache License 2.0</td></tr><tr><th scope="row">Chart.js 4.4.7</th><td>Участники проекта Chart.js</td><td>MIT</td></tr><tr><th scope="row">Swiper 11.1.14</th><td>Vladimir Kharlampidi и участники проекта</td><td>MIT</td></tr></tbody></table></div>
+    </section>
+
+    <section class="container">
+      <div class="cta">
+        <h2>Что дальше</h2>
+        <p class="cta__text">Вернитесь в каталог и посмотрите игры выборки или откройте главную страницу.</p>
+        <div class="cta__actions">
+          <a class="button" href="catalog.html">В каталог</a>
+          <a class="button button--outline" href="index.html">На главную</a>
+        </div>
       </div>
     </section>
   </main>
