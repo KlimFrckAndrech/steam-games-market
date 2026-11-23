@@ -103,3 +103,6 @@
 @import url("../blocks/wish-item/elements/wish-item__fields.css");
 @import url("../blocks/calc/calc.css");
 @import url("../blocks/modal/elements/modal__total.css");
+@import url("../blocks/definition-list/definition-list.css");
+@import url("../blocks/definition-list/elements/definition-list__item.css");
+@import url("../blocks/spec-table/spec-table.css");
