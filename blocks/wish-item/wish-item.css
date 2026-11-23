@@ -1,0 +1,9 @@
+.wish-item {
+  display: grid; gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface);
+}
+@media (min-width: 768px) {
+  .wish-item { grid-template-columns: 12rem 1fr; align-items: start; }
+  .wish-item > .wish-item__cover { grid-row: 1 / span 4; }
+}

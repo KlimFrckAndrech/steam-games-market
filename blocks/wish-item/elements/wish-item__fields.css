@@ -1,0 +1,5 @@
+.wish-item__fields { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.wish-item__field { display: grid; gap: var(--space-1); }
+.wish-item__label { font-size: 0.875rem; font-weight: 700; }
+.wish-item__result { margin: 0; font-weight: 700; }
+.wish-item__remove { justify-self: start; }
