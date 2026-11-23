@@ -12,3 +12,4 @@ if (document.querySelector("[data-prices]")) import("./prices-page.js");
 if (document.querySelector("[data-platforms-page]")) import("./platforms-page.js");
 if (document.querySelector("[data-home]")) import("./home.js");
 if (document.querySelector("[data-wishlist]")) import("./wishlist-page.js");
+if (document.querySelector("[data-about]")) import("./about-page.js");
