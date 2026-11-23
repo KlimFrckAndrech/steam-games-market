@@ -1,0 +1,2 @@
+.split { display: grid; gap: var(--space-6); align-items: center; }
+@media (min-width: 1024px) { .split { grid-template-columns: 1.2fr 1fr; gap: var(--space-8); } }
