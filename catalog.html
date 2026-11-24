@@ -9,6 +9,7 @@
     /* тема до отрисовки: без мигания */
     try { var t = localStorage.getItem("theme"); document.documentElement.dataset.theme = t === "light" ? "light" : "dark"; } catch (e) {}
   </script>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/main.js"></script>
 </head>
@@ -114,11 +115,14 @@
       </aside>
     </section>
 
-    <section class="container text" aria-labelledby="about-catalog">
+    <section class="container game-block split" aria-labelledby="about-catalog">
+      <div class="text">
       <h2 id="about-catalog">Что именно в каталоге</h2>
       <p>В каталоге около полутора тысяч игр, вышедших с 2009 по 2024 год. Это не весь Steam, а выборка из набора данных на март 2025 года. Игры отбирались поровну по годам выхода и ценовым диапазонам, поэтому малоизвестных игр здесь больше, чем на витрине магазина. Игры 18+ и с тегами для взрослых в выборку не входят.</p>
       <p>Фильтры работают вместе. Выберите жанр Strategy и цену «до 5 $», и останутся только недорогие стратегии. Платформы объединяются условием «и»: если отметить Linux и macOS, останутся игры, вышедшие на обеих. Названия жанров даны так, как они записаны в наборе, то есть по-английски.</p>
       <p>Цены указаны в долларах США и носят справочный характер: купить игру на сайте нельзя. Если обложка не загрузилась с серверов Steam, вместо неё показывается заглушка.</p>
+    </div>
+      <img class="illustration" src="images/illustration-catalog-960.webp" srcset="images/illustration-catalog-480.webp 480w, images/illustration-catalog-960.webp 960w" sizes="(min-width: 1024px) 400px, 100vw" width="960" height="540" alt="Иллюстрация: сетка карточек игр и лупа" loading="lazy">
     </section>
 
     <section class="container">

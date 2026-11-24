@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1f2b"/><stop offset="1" stop-color="#2b3a66"/></linearGradient></defs>
+<rect width="960" height="540" fill="url(#g)"/>
+<g stroke="#8fa3b8" stroke-width="5" fill="#2a3142">
+<rect x="90" y="90" width="200" height="150" rx="14"/><rect x="320" y="90" width="200" height="150" rx="14"/><rect x="550" y="90" width="200" height="150" rx="14"/>
+<rect x="90" y="270" width="200" height="150" rx="14"/><rect x="320" y="270" width="200" height="150" rx="14"/><rect x="550" y="270" width="200" height="150" rx="14"/></g>
+<g><rect x="106" y="106" width="168" height="70" rx="8" fill="#1b9af7"/><rect x="336" y="106" width="168" height="70" rx="8" fill="#e0a93b"/><rect x="566" y="106" width="168" height="70" rx="8" fill="#7a6cff"/>
+<rect x="106" y="286" width="168" height="70" rx="8" fill="#5c7e10"/><rect x="336" y="286" width="168" height="70" rx="8" fill="#1b9af7" opacity=".8"/><rect x="566" y="286" width="168" height="70" rx="8" fill="#e0a93b" opacity=".8"/></g>
+<g fill="#3b4666"><rect x="106" y="192" width="120" height="12" rx="6"/><rect x="106" y="214" width="70" height="10" rx="5"/><rect x="336" y="192" width="120" height="12" rx="6"/><rect x="336" y="214" width="70" height="10" rx="5"/><rect x="566" y="192" width="120" height="12" rx="6"/><rect x="566" y="214" width="70" height="10" rx="5"/>
+<rect x="106" y="372" width="120" height="12" rx="6"/><rect x="106" y="394" width="70" height="10" rx="5"/><rect x="336" y="372" width="120" height="12" rx="6"/><rect x="336" y="394" width="70" height="10" rx="5"/><rect x="566" y="372" width="120" height="12" rx="6"/><rect x="566" y="394" width="70" height="10" rx="5"/></g>
+<g fill="none" stroke="#e0a93b" stroke-width="14" stroke-linecap="round"><circle cx="760" cy="300" r="85"/><path d="M820 362l70 70"/></g>
+<g stroke="#8fa3b8" stroke-width="6" stroke-linecap="round"><path d="M840 110h60M840 150h60M840 190h60"/></g><g fill="#1b9af7"><circle cx="860" cy="110" r="10"/><circle cx="885" cy="150" r="10"/><circle cx="850" cy="190" r="10"/></g></svg>

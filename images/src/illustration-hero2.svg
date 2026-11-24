@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1f2b"/><stop offset="1" stop-color="#1f4a57"/></linearGradient></defs>
+<rect width="960" height="540" fill="url(#g)"/>
+<rect x="110" y="170" width="740" height="260" rx="22" fill="#2a3142" stroke="#8fa3b8" stroke-width="8"/>
+<g fill="#3b4666">
+<rect x="150" y="205" width="60" height="50" rx="8"/><rect x="225" y="205" width="60" height="50" rx="8"/><rect x="300" y="205" width="60" height="50" rx="8"/><rect x="375" y="205" width="60" height="50" rx="8"/><rect x="450" y="205" width="60" height="50" rx="8"/><rect x="525" y="205" width="60" height="50" rx="8"/><rect x="600" y="205" width="60" height="50" rx="8"/><rect x="675" y="205" width="60" height="50" rx="8"/><rect x="750" y="205" width="60" height="50" rx="8"/>
+<rect x="150" y="270" width="60" height="50" rx="8"/><rect x="225" y="270" width="60" height="50" rx="8" fill="#1b9af7"/><rect x="300" y="270" width="60" height="50" rx="8" fill="#1b9af7"/><rect x="375" y="270" width="60" height="50" rx="8" fill="#1b9af7"/><rect x="450" y="270" width="60" height="50" rx="8"/><rect x="525" y="270" width="60" height="50" rx="8"/><rect x="600" y="270" width="60" height="50" rx="8" fill="#e0a93b"/><rect x="675" y="270" width="60" height="50" rx="8"/><rect x="750" y="270" width="60" height="50" rx="8"/>
+<rect x="190" y="335" width="520" height="60" rx="8"/><rect x="725" y="335" width="85" height="60" rx="8" fill="#7a6cff"/></g></svg>
