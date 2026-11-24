@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1f2b"/><stop offset="1" stop-color="#2c3550"/></linearGradient></defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <g fill="none" stroke="#3b4666" stroke-width="2"><path d="M60 450H900M60 360H900M60 270H900M60 180H900M60 90H900"/></g>
+  <g>
+    <rect x="110" y="330" width="90" height="120" rx="10" fill="#1b9af7"/>
+    <rect x="240" y="290" width="90" height="160" rx="10" fill="#1b9af7" opacity=".85"/>
+    <rect x="370" y="230" width="90" height="220" rx="10" fill="#e0a93b"/>
+    <rect x="500" y="170" width="90" height="280" rx="10" fill="#1b9af7" opacity=".85"/>
+    <rect x="630" y="215" width="90" height="235" rx="10" fill="#1b9af7" opacity=".7"/>
+    <rect x="760" y="195" width="90" height="255" rx="10" fill="#1b9af7" opacity=".6"/>
+  </g>
+  <g transform="translate(560 70) rotate(12)">
+    <path d="M0 0h190l40 45-40 45H0z" fill="#7a6cff"/><circle cx="195" cy="45" r="9" fill="#1a1f2b"/>
+    <text x="30" y="58" font-family="Arial,sans-serif" font-size="40" font-weight="700" fill="#fff">9,99 $</text>
+  </g>
+  <g transform="translate(120 90) rotate(-8)">
+    <path d="M0 0h170l36 40-36 40H0z" fill="#5c7e10"/><circle cx="172" cy="40" r="8" fill="#1a1f2b"/>
+    <text x="26" y="52" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#fff">0 $</text>
+  </g>
+  <g fill="#e0a93b"><circle cx="440" cy="130" r="30"/><circle cx="440" cy="130" r="20" fill="none" stroke="#1a1f2b" stroke-width="4"/></g>
+</svg>
