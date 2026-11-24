@@ -59,7 +59,7 @@ steam-games-market/
 ├── blocks/     Nested БЭМ: блок/ → блок.css, elements/, modifiers/
 ├── js/         main.js и модули: data, format, wishlist, game-card, catalog, charts ...
 ├── data/       games.json, prices.json, platforms.json
-├── images/     оформительские WebP-иллюстрации и заглушка обложки
+├── images/     WebP-иллюстрации, заглушка обложки, favicon; src/ — исходники SVG
 ├── fonts/      woff2 Rubik и Roboto
 ├── notebooks/  копия ноутбука Colab
 ├── docs/       журнал работы и вопросы руководителю
@@ -104,7 +104,7 @@ steam-games-market/
 - Данные: «Steam Games Dataset 2025» (Kaggle, MIT по данным страницы набора). В репозитории лежит только выборка.
 - Обложки и скриншоты игр принадлежат Valve и правообладателям игр, подгружаются с серверов Steam.
 - Шрифты: Rubik (SIL OFL 1.1), Roboto (Apache 2.0). Библиотеки: Chart.js и Swiper (MIT).
-- Оформительские иллюстрации в `images/`: временные заглушки, авторство и источники будут указаны после замены.
+- Оформительские иллюстрации в `images/`: авторские векторные рисунки Клименко Александра Андреевича, созданные для проекта с помощью ИИ-ассистента Claude (Anthropic). Исходники SVG лежат в `images/src/`, на сайте используются их WebP-экспорты (960 и 480 px, `srcset`). Фотографий и чужих материалов в оформлении нет.
 
 ## Локальный запуск
 

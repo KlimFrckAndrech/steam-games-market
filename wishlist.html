@@ -9,6 +9,7 @@
     /* тема до отрисовки: без мигания */
     try { var t = localStorage.getItem("theme"); document.documentElement.dataset.theme = t === "light" ? "light" : "dark"; } catch (e) {}
   </script>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/main.js"></script>
 </head>
@@ -72,10 +73,13 @@
       </div>
     </section>
 
-    <section class="container text game-block" aria-labelledby="how-title">
+    <section class="container game-block split" aria-labelledby="how-title">
+      <div class="text">
       <h2 id="how-title">Как работает калькулятор</h2>
       <p>Цена со скидкой равна цене игры, умноженной на единицу минус скидка, делённую на сто: при цене 20 $ и скидке 25 % получится 15 $. Итог списка — сумма цен со скидкой всех игр. Стоимость часа игры — цена со скидкой, делённая на среднее время игры в часах.</p>
       <p>Скидку вы вводите сами: в наборе данных она есть у части игр, но не сказано, учтена ли она уже в цене, поэтому подставлять её автоматически мы не стали. Время игры подставляется из набора, если оно там есть, но это среднее время игроков, а не время прохождения, и его можно поменять. Если времени нет, стоимость часа не считается. В списке может быть не больше десяти игр, введённые значения сохраняются в браузере.</p>
+    </div>
+      <img class="illustration" src="images/illustration-wishlist-960.webp" srcset="images/illustration-wishlist-480.webp 480w, images/illustration-wishlist-960.webp 960w" sizes="(min-width: 1024px) 400px, 100vw" width="960" height="540" alt="Иллюстрация: список с отметками и калькулятор со скидкой" loading="lazy">
     </section>
 
     <section class="container">

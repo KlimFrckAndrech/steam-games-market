@@ -37,6 +37,7 @@
   ]
 }
   </script>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/main.js"></script>
 </head>
@@ -67,11 +68,12 @@
   </header>
 
   <main id="main" data-about>
-    <section class="intro">
-      <div class="container">
+    <section class="intro intro--split container">
+      <div>
         <h1 class="intro__title">Источник и ограничения данных</h1>
         <p class="intro__lead">Откуда взяты данные, как из них получилась выборка, что она не показывает и кто сделал сайт. Страница нужна, чтобы любой вывод на других страницах можно было проверить и оценить честно.</p>
       </div>
+      <img class="illustration" src="images/illustration-about-960.webp" srcset="images/illustration-about-480.webp 480w, images/illustration-about-960.webp 960w" sizes="(min-width: 1024px) 400px, 100vw" width="960" height="540" alt="Иллюстрация: база данных, стрелка и таблица с выделенными ячейками">
     </section>
 
     <section class="container game-block" aria-labelledby="source-title">
@@ -107,7 +109,7 @@
     <section class="container game-block" aria-labelledby="credits-title">
       <h2 id="credits-title">Авторы, лицензии и источники</h2>
       <p>Сайт сделан Клименко Александром Андреевичем в рамках курсовой работы «Разработка веб-сайта рынка видеоигр Steam». Репозиторий: <a href="https://github.com/KlimFrckAndrech/steam-games-market" rel="noopener">KlimFrckAndrech/steam-games-market</a>.</p>
-      <div class="chart__table-wrap"><table class="data-table"><caption class="spec-table__caption">Лицензии и источники</caption><thead><tr><th scope="col">Что</th><th scope="col">Автор или владелец</th><th scope="col">Лицензия или условия</th></tr></thead><tbody><tr><th scope="row">Код сайта</th><td>Клименко Александр Андреевич (GitHub: KlimFrckAndrech)</td><td>MIT, файл LICENSE в репозитории</td></tr><tr><th scope="row">Данные игр</th><td>«Steam Games Dataset 2025», автор artermiloff, Kaggle</td><td>MIT (по данным страницы набора на Kaggle; в тексте лицензии указаны авторские права Mark Otto, 2013, и Andrew Fong, 2017). В репозитории лежит только отобранная выборка</td></tr><tr><th scope="row">Обложки и скриншоты игр</th><td>Valve и правообладатели игр</td><td>Не хранятся в репозитории, подгружаются с серверов Steam; см. условия использования</td></tr><tr><th scope="row">Оформительские иллюстрации</th><td>Временные заглушки, будут заменены</td><td>Источники и авторство будут указаны после замены</td></tr><tr><th scope="row">Шрифт Rubik</th><td>Hubert &amp; Fischer, Meir Sadan, Cyreal</td><td>SIL Open Font License 1.1</td></tr><tr><th scope="row">Шрифт Roboto</th><td>Google</td><td>Apache License 2.0</td></tr><tr><th scope="row">Chart.js 4.4.7</th><td>Участники проекта Chart.js</td><td>MIT</td></tr><tr><th scope="row">Swiper 11.1.14</th><td>Vladimir Kharlampidi и участники проекта</td><td>MIT</td></tr></tbody></table></div>
+      <div class="chart__table-wrap"><table class="data-table"><caption class="spec-table__caption">Лицензии и источники</caption><thead><tr><th scope="col">Что</th><th scope="col">Автор или владелец</th><th scope="col">Лицензия или условия</th></tr></thead><tbody><tr><th scope="row">Код сайта</th><td>Клименко Александр Андреевич (GitHub: KlimFrckAndrech)</td><td>MIT, файл LICENSE в репозитории</td></tr><tr><th scope="row">Данные игр</th><td>«Steam Games Dataset 2025», автор artermiloff, Kaggle</td><td>MIT (по данным страницы набора на Kaggle; в тексте лицензии указаны авторские права Mark Otto, 2013, и Andrew Fong, 2017). В репозитории лежит только отобранная выборка</td></tr><tr><th scope="row">Обложки и скриншоты игр</th><td>Valve и правообладатели игр</td><td>Не хранятся в репозитории, подгружаются с серверов Steam; см. условия использования</td></tr><tr><th scope="row">Оформительские иллюстрации</th><td>Клименко Александр Андреевич; рисунки созданы для проекта с помощью ИИ-ассистента Claude (Anthropic) в виде векторной графики (SVG), исходники в <code>images/src/</code>, в сайт экспортированы в WebP</td><td>Свободное использование в рамках проекта</td></tr><tr><th scope="row">Шрифт Rubik</th><td>Hubert &amp; Fischer, Meir Sadan, Cyreal</td><td>SIL Open Font License 1.1</td></tr><tr><th scope="row">Шрифт Roboto</th><td>Google</td><td>Apache License 2.0</td></tr><tr><th scope="row">Chart.js 4.4.7</th><td>Участники проекта Chart.js</td><td>MIT</td></tr><tr><th scope="row">Swiper 11.1.14</th><td>Vladimir Kharlampidi и участники проекта</td><td>MIT</td></tr></tbody></table></div>
     </section>
 
     <section class="container">

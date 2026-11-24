@@ -9,6 +9,7 @@
     /* тема до отрисовки: без мигания */
     try { var t = localStorage.getItem("theme"); document.documentElement.dataset.theme = t === "light" ? "light" : "dark"; } catch (e) {}
   </script>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/main.js"></script>
 </head>
@@ -74,13 +75,16 @@
         </div>
       </section>
 
-      <section class="container text game-block" aria-labelledby="read-title">
+      <section class="container game-block split" aria-labelledby="read-title">
+      <div class="text">
         <h2 id="read-title">Как читать эту карточку</h2>
         <p>Цена указана в долларах США и носит справочный характер: сайт ничего не продаёт, а цена в магазине зависит от региона и скидок. Доля положительных отзывов показывает, какая часть отзывов игры положительная, а число отзывов говорит, насколько этому проценту можно доверять: когда отзывов сотни тысяч, процент устойчив, а при полусотне он заметно колеблется.</p>
         <p>Индекс баланса отзывов от −100 до +100 переводит долю в словесную оценку, например «умеренное позитивное восприятие». Всё это описывает выборку из набора данных на март 2025 года: сегодняшние цифры в Steam могут отличаться. Сравнение с другими играми сделано по ценовому диапазону и году выхода, но оно не доказывает, что цена или год влияют на отзывы.</p>
         <h3>Что говорят данные об этой игре</h3>
         <ul class="text__list" data-findings></ul>
-      </section>
+      </div>
+      <img class="illustration" src="images/illustration-game-960.webp" srcset="images/illustration-game-480.webp 480w, images/illustration-game-960.webp 960w" sizes="(min-width: 1024px) 400px, 100vw" width="960" height="540" alt="Иллюстрация: карточка игры с пейзажем, звёздами и ценником" loading="lazy">
+    </section>
 
       <section class="container game-block" aria-labelledby="similar-title" data-similar-section>
         <h2 id="similar-title">Похожие игры по цене и жанру</h2>
